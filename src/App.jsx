@@ -1,24 +1,13 @@
 import "./App.css";
+import RandomColor from "./containers/random-color/random-color";
 
 function App() {
   return (
     <>
       <main className="main">
-        <article className="generation">
-          <h2 className="title">Random Color Generation</h2>
-          <section className="color"></section>
-          <section className="generation__section">
-            <label className="label">
-              Select Color:
-              <input type="color" name="" className="input" />
-            </label>
-            <button>Save</button>
-          </section>
-          <button className="button">Random</button>
-        </article>
-
+        <RandomColor />
         <article>
-          <h2>Colors Saves</h2>
+          <h2>Colors Saved</h2>
           <section>
             <section>
               <span>color</span>
