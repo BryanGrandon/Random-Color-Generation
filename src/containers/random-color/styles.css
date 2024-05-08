@@ -1,0 +1,29 @@
+.random-color {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border: 1px solid #fff;
+  padding: 1.5rem;
+}
+
+.random-color__show-color {
+  display: flex;
+  align-items: end;
+  justify-content: flex-end;
+  border: 1px solid #000;
+  border-radius: 1rem;
+  height: 6rem;
+  overflow: hidden;
+  min-width: 20rem;
+  margin: auto;
+}
+
+.label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.generation__section {
+  display: flex;
+  justify-content: space-between;
+}
