@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import "./styles.css";
 
 import { Title } from "../../components/title/title";
@@ -6,45 +7,43 @@ import { randomColor } from "./functions";
 import Button from "../../components/button/button";
 
 function RandomColor() {
+  const $ = (element) => document.querySelector(`.${element}`);
   const [hex, setHex] = useState();
   const saved = [];
 
-  const $ = (element) => document.querySelector(`.${element}`);
-
   const randomColorClick = () => {
     let generatedColor = randomColor();
-    $("input-color").value = generatedColor;
-    $("random-color__show-color").style.setProperty(
-      "background-color",
-      generatedColor
-    );
+    $("select-color").value = generatedColor;
+    $("show-color").style.setProperty("background-color", generatedColor);
     setHex(generatedColor);
   };
-
   const inputColorChange = (e) => {
-    $("random-color__show-color").style.setProperty(
-      "background-color",
-      e.target.value
-    );
+    $("show-color").style.setProperty("background-color", e.target.value);
     setHex(e.target.value);
   };
 
   return (
     <article className="random-color">
       <Title text="Random Color Generation" />
-      <section className="random-color__show-color"></section>
-
-      <section className="generation__section">
-        <label className="label">
-          Change Color:
-          <input
-            type="color"
-            className="input-color"
-            onChange={inputColorChange}
-          />
-        </label>
-        <button>Save</button>
+      <input
+        type="color"
+        className="select-color"
+        id="id-select-color"
+        onChange={inputColorChange}
+      />
+      <section className="random-color__select-color">
+        <section className="random-color__change-color">
+          <p>Change color:</p>
+          <label htmlFor="id-select-color" className="show-color">
+            {hex}
+          </label>
+        </section>
+        <button className="btn-save">
+          <FaRegBookmark />
+          <FaBookmark />
+        </button>
       </section>
+
       <Button onClick={randomColorClick} text="Random color" />
     </article>
   );
