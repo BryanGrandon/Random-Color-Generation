@@ -6,6 +6,7 @@ function App() {
     <>
       <main className="main">
         <RandomColor />
+
         <article>
           <h2>Colors Saved</h2>
           <section>
