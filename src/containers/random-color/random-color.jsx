@@ -1,25 +1,49 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { randomColor } from "./functions";
+import { Title } from "../../components/title/title";
+import Button from "../../components/button/button";
+import { RandomColorGeneration } from "../../contexts/random-color-generation-provider";
 import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import "./styles.css";
-
-import { Title } from "../../components/title/title";
-import { randomColor } from "./functions";
-import Button from "../../components/button/button";
 
 function RandomColor() {
   const $ = (element) => document.querySelector(`.${element}`);
   const [hex, setHex] = useState();
-  const saved = [];
+  const { savedColors } = useContext(RandomColorGeneration);
+
+  const icon = {
+    marking() {
+      $("icon-marking").style.setProperty("display", "block");
+      $("icon-unmarked").style.setProperty("display", "none");
+    },
+    unmarked() {
+      $("icon-marking").style.setProperty("display", "none");
+      $("icon-unmarked").style.setProperty("display", "block");
+    },
+  };
 
   const randomColorClick = () => {
+    icon.unmarked();
     let generatedColor = randomColor();
     $("select-color").value = generatedColor;
     $("show-color").style.setProperty("background-color", generatedColor);
     setHex(generatedColor);
   };
   const inputColorChange = (e) => {
-    $("show-color").style.setProperty("background-color", e.target.value);
-    setHex(e.target.value);
+    icon.unmarked();
+    let valueColor = e.target.value;
+    $("show-color").style.setProperty("background-color", valueColor);
+    setHex(valueColor);
+  };
+
+  const saveColorClick = () => {
+    if (!savedColors.includes(hex)) {
+      savedColors.push(hex);
+      icon.marking();
+    } else if (savedColors.includes(hex)) {
+      savedColors.pop();
+      icon.unmarked();
+    }
   };
 
   return (
@@ -38,9 +62,9 @@ function RandomColor() {
             {hex}
           </label>
         </section>
-        <button className="btn-save">
-          <FaRegBookmark />
-          <FaBookmark />
+        <button onClick={saveColorClick}>
+          <FaBookmark className="icon icon-marking" />
+          <FaRegBookmark className="icon icon-unmarked" />
         </button>
       </section>
 

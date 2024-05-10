@@ -36,10 +36,10 @@
   align-items: center;
   gap: 0.5rem;
 }
-.btn-save {
-  border: 1px solid #f00;
-  padding: 0.2rem;
-}
-.icon-btn-save {
+
+.icon {
   font-size: 1.3rem;
+}
+.icon-marking {
+  display: none;
 }
