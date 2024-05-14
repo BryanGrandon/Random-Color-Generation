@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
 import { saveIcon } from "../components/button-saved/button-saved";
-
 import { randomColor } from "./functions";
 
 const ColorsContext = createContext();
@@ -57,6 +56,16 @@ function ColorsContextProvider({ children }) {
     }
   };
 
+  const handlerClickClose = (event) => {
+    const eventName = event.target.nodeName;
+    let color =
+      eventName == "svg"
+        ? event.target.parentNode.value
+        : event.target.parentNode.parentNode.value;
+    if (color == hexadecimal) saveIcon.unmarked();
+    deleteColor(color);
+  };
+
   return (
     <ColorsContext.Provider
       value={{
@@ -65,6 +74,7 @@ function ColorsContextProvider({ children }) {
         handlerClickRandomColor,
         handlerChangeInputColor,
         handlerClickSaveColor,
+        handlerClickClose,
       }}
     >
       {children}

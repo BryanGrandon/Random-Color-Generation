@@ -1,4 +1,5 @@
 import "./App.css";
+import ViewColorSaved from "./containers/view-colors-saved/view-colors-saved";
 import ViewRandomColor from "./containers/view-random-color/view-random-color";
 
 function App() {
@@ -6,17 +7,7 @@ function App() {
     <>
       <main className="main">
         <ViewRandomColor />
-
-        <article>
-          <h2>Colors Saved</h2>
-          <section>
-            <section>
-              <span>color</span>
-              <p>#1f1234</p>
-              <button>x</button>
-            </section>
-          </section>
-        </article>
+        <ViewColorSaved />
       </main>
     </>
   );
