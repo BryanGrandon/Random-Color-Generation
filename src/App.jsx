@@ -1,11 +1,11 @@
 import "./App.css";
-import RandomColor from "./containers/random-color/random-color";
+import ViewRandomColor from "./containers/view-random-color/view-random-color";
 
 function App() {
   return (
     <>
       <main className="main">
-        <RandomColor />
+        <ViewRandomColor />
 
         <article>
           <h2>Colors Saved</h2>
