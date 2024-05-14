@@ -1,0 +1,24 @@
+.card-color {
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-color__color {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+}
+.card-color__hex {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.card-color__btn {
+  font-size: 1.5rem;
+  z-index: 9;
+  overflow: hidden;
+}
+
+.svg__close {
+  z-index: 1;
+}
