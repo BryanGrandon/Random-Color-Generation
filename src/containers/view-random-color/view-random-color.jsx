@@ -3,6 +3,7 @@ import { useColorsContext } from "../../contexts/colors-context";
 import Title from "../../components/title/title";
 import Button from "../../components/button/button";
 import ButtonSaved from "../../components/button-saved/button-saved";
+import ButtonCopy from "../../components/button-copy/button-copy";
 import "./styles.css";
 
 function ViewRandomColor() {
@@ -35,6 +36,9 @@ function ViewRandomColor() {
           <label htmlFor="id-select-color" className="show-color">
             {hexadecimal}
           </label>
+          <ButtonCopy
+            onClick={() => navigator.clipboard.writeText([hexadecimal])}
+          />
         </section>
         <ButtonSaved onClick={handlerClickSaveColor} />
       </section>

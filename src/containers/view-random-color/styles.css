@@ -25,6 +25,7 @@
   border-radius: 0.2rem;
   font-family: cursive;
   text-shadow: 1px 1px 3px #1f1234;
+  color: #eee;
 }
 .random-color__select-color {
   display: flex;
