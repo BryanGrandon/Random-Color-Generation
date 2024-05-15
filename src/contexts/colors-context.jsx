@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 import { saveIcon } from "../components/button-saved/button-saved";
+
 import { randomColor } from "./functions";
 
 const ColorsContext = createContext();
