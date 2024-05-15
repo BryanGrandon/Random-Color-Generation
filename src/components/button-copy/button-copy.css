@@ -1,0 +1,19 @@
+.icon {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.icon-copy-outline {
+  transition: all 1s ease;
+  display: block;
+}
+.icon-copy-outline:active {
+  display: none;
+}
+.icon-copy {
+  transition: all 1s ease;
+  display: none;
+}
+.icon-copy-outline:active + .icon-copy {
+  display: block;
+}
