@@ -1,8 +1,8 @@
 import React from "react";
 import { IoCopyOutline, IoCopy } from "react-icons/io5";
-import "./button-copy.css";
+import "./copy-icon-button.css";
 
-function ButtonCopy({ onClick, value }) {
+function CopyIconButton({ onClick, value }) {
   return (
     <button onClick={onClick} value={value}>
       <IoCopyOutline className="icon icon-copy-outline" />
@@ -10,5 +10,4 @@ function ButtonCopy({ onClick, value }) {
     </button>
   );
 }
-
-export default ButtonCopy;
+export default CopyIconButton;
