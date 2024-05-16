@@ -1,10 +1,8 @@
 import React, { createContext, useContext, useState } from "react";
-import { saveIcon } from "../components/other/button-saved/button-saved";
-
-import { randomColor } from "./functions";
+import { actionsSavedIcon } from "../components/buttons/saved-icon-button/saved-icon-button";
+import { randomColor, searchColor } from "./functions";
 
 const ColorsContext = createContext();
-
 const useColorsContext = () => {
   return useContext(ColorsContext);
 };
@@ -22,15 +20,11 @@ function ColorsContextProvider({ children }) {
     setSaved(newSaved);
   };
 
-  const searchColor = (color) => {
-    let theColors = [];
-    saved.map((e) => theColors.push(e.hex));
-    return theColors.includes(color);
-  };
-
   const handlerClickRandomColor = () => {
     let color = randomColor();
-    searchColor(color) ? saveIcon.marking() : saveIcon.unmarked();
+    searchColor(saved, color)
+      ? actionsSavedIcon.marking()
+      : actionsSavedIcon.unmarked();
     $("select-color").value = color;
     $("show-color").style.setProperty("background-color", color);
     setHexadecimal(color);
@@ -38,22 +32,24 @@ function ColorsContextProvider({ children }) {
 
   const handlerChangeInputColor = (e) => {
     let color = e.target.value;
-    searchColor(color) ? saveIcon.marking() : saveIcon.unmarked();
+    searchColor(saved, color)
+      ? actionsSavedIcon.marking()
+      : actionsSavedIcon.unmarked();
     $("show-color").style.setProperty("background-color", color);
     setHexadecimal(color);
   };
 
   const handlerClickSaveColor = () => {
-    if (!searchColor(hexadecimal)) {
+    if (!searchColor(saved, hexadecimal)) {
       const info = {
         id: saved.length,
         hex: hexadecimal,
       };
       setSaved([...saved, info]);
-      saveIcon.marking();
-    } else if (searchColor(hexadecimal)) {
+      actionsSavedIcon.marking();
+    } else if (searchColor(saved, hexadecimal)) {
       deleteColor(hexadecimal);
-      saveIcon.unmarked();
+      actionsSavedIcon.unmarked();
     }
   };
 
@@ -63,7 +59,7 @@ function ColorsContextProvider({ children }) {
       eventName == "svg"
         ? event.target.parentNode.value
         : event.target.parentNode.parentNode.value;
-    if (color == hexadecimal) saveIcon.unmarked();
+    if (color == hexadecimal) actionsSavedIcon.unmarked();
     deleteColor(color);
   };
 
