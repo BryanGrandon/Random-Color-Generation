@@ -1,16 +1,16 @@
 import "./App.css";
 import Header from "./components/header/header";
+import SelectColor from "./view/select-color/select-color";
 
 function App() {
+  SelectColor;
   return (
     <>
       <main className="main">
         <header className="container__header">
           <Header />
         </header>
-        <article>
-          <h2>Saved colors</h2>
-        </article>
+        <SelectColor />
         <article>
           <h2>Gradients</h2>
         </article>
