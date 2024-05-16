@@ -1,8 +1,8 @@
 import React from "react";
 import { FaRegBookmark, FaBookmark } from "react-icons/fa";
-import "./button-saved.css";
+import "./saved-icon-button.css";
 
-const saveIcon = {
+const actionsSavedIcon = {
   marking() {
     document
       .querySelector(".icon-marking")
@@ -21,7 +21,7 @@ const saveIcon = {
   },
 };
 
-function ButtonSaved({ onClick }) {
+function SavedIconButton({ onClick }) {
   return (
     <button onClick={onClick}>
       <FaBookmark className="icon icon-marking" />
@@ -29,5 +29,5 @@ function ButtonSaved({ onClick }) {
     </button>
   );
 }
-export { saveIcon };
-export default ButtonSaved;
+export { actionsSavedIcon };
+export default SavedIconButton;
