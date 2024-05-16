@@ -1,16 +1,12 @@
 import "./App.css";
-import ViewColorSaved from "./containers/view-colors-saved/view-colors-saved";
-import ViewGradient from "./containers/view-gradient/view-gradient";
-import ViewRandomColor from "./containers/view-random-color/view-random-color";
+import Header from "./components/header/header";
 
 function App() {
   return (
     <>
-      <main>
-        <header>
-          <nav></nav>
-          <h1></h1>
-          <section></section>
+      <main className="main">
+        <header className="container__header">
+          <Header />
         </header>
         <article>
           <h2>Saved colors</h2>
@@ -18,12 +14,6 @@ function App() {
         <article>
           <h2>Gradients</h2>
         </article>
-      </main>
-
-      <main className="main">
-        <ViewRandomColor />
-        <ViewColorSaved />
-        <ViewGradient />
       </main>
     </>
   );

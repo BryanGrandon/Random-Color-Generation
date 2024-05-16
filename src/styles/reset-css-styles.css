@@ -155,6 +155,7 @@ h2,
 h3,
 h4 {
   text-wrap: balance;
+  line-height: 1;
 }
 p {
   text-wrap: pretty;

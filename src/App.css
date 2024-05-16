@@ -1,4 +1,4 @@
-.main {
-  max-width: 1200px;
-  margin: auto;
+.container__header {
+  background-image: url(https://images.pexels.com/photos/3209473/pexels-photo-3209473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
 }
