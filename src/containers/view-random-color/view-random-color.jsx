@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useColorsContext } from "../../contexts/colors-context";
-import Title from "../../components/title/title";
-import Button from "../../components/button/button";
-import ButtonSaved from "../../components/button-saved/button-saved";
-import ButtonCopy from "../../components/button-copy/button-copy";
+import Title from "../../components/other/title/title";
+import Button from "../../components/other/button/button";
+import ButtonSaved from "../../components/other/button-saved/button-saved";
+import ButtonCopy from "../../components/other/button-copy/button-copy";
 import "./styles.css";
 
 function ViewRandomColor() {

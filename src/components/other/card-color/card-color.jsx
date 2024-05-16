@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonCopy from "../button-copy/button-copy";
+import ButtonCopy from "../other/button-copy/button-copy";
 
 import { IoMdClose } from "react-icons/io";
 import "./styles.css";

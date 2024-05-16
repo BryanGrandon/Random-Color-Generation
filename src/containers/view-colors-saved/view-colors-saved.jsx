@@ -1,6 +1,6 @@
 import React from "react";
 import { useColorsContext } from "../../contexts/colors-context";
-import Title from "../../components/title/title";
+import Title from "../../components/other/title/title";
 import CardColor from "../../components/card-color/card-color";
 import "./styles.css";
 
