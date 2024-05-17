@@ -25,8 +25,9 @@ function ColorsContextProvider({ children }) {
     searchColor(saved, color)
       ? actionsSavedIcon.marking()
       : actionsSavedIcon.unmarked();
-    $("select-color").value = color;
-    $("show-color").style.setProperty("background-color", color);
+    $("select-color__input-color").value = color;
+    $("select-color__input-text").value = color;
+    $("select-color__color").style.setProperty("background-color", color);
     setHexadecimal(color);
   };
 
@@ -35,8 +36,21 @@ function ColorsContextProvider({ children }) {
     searchColor(saved, color)
       ? actionsSavedIcon.marking()
       : actionsSavedIcon.unmarked();
-    $("show-color").style.setProperty("background-color", color);
+    $("select-color__input-text").value = color;
+    $("select-color__color").style.setProperty("background-color", color);
     setHexadecimal(color);
+  };
+
+  const handlerChangeInputText = (e) => {
+    let color = e.target.value;
+    searchColor(saved, color)
+      ? actionsSavedIcon.marking()
+      : actionsSavedIcon.unmarked();
+    if (color.length == 7) {
+      $("select-color__input-color").value = color;
+      $("select-color__color").style.setProperty("background-color", color);
+      setHexadecimal(color);
+    }
   };
 
   const handlerClickSaveColor = () => {
@@ -70,6 +84,7 @@ function ColorsContextProvider({ children }) {
         hexadecimal,
         handlerClickRandomColor,
         handlerChangeInputColor,
+        handlerChangeInputText,
         handlerClickSaveColor,
         handlerClickClose,
       }}
