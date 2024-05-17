@@ -1,0 +1,22 @@
+.color-card {
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+  justify-content: space-between;
+  padding: 0.2rem 1rem;
+  box-shadow: 1px 1px 5px #1f1235;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.color-card__hex,
+.color-card__btn {
+  cursor: pointer;
+  text-shadow: 2px 2px 6px #1f1235;
+}
+.color-card__hex {
+  font-size: 1rem;
+  font-family: cursive;
+}
+.svg__close {
+  font-size: 1.3rem;
+}
