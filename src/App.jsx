@@ -1,9 +1,9 @@
 import "./App.css";
 import Header from "./components/header/header";
+import ColorSaved from "./view/color-saved/color-saved";
 import SelectColor from "./view/select-color/select-color";
 
 function App() {
-  SelectColor;
   return (
     <>
       <main className="main">
@@ -11,6 +11,7 @@ function App() {
           <Header />
         </header>
         <SelectColor />
+        <ColorSaved />
         <article>
           <h2>Gradients</h2>
         </article>

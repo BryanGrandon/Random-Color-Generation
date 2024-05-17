@@ -10,7 +10,6 @@
   font-size: 1.8rem;
   font-family: cursive;
 }
-
 .select-color__color {
   height: 12rem;
   display: flex;
@@ -18,7 +17,6 @@
   border-radius: 1rem;
   overflow: hidden;
 }
-
 .select-color__options {
   background-color: #00000075;
   width: 100%;
@@ -56,7 +54,6 @@
   display: flex;
   gap: 0.8rem;
 }
-
 .select-color__btn {
   cursor: pointer;
   font-family: cursive;
