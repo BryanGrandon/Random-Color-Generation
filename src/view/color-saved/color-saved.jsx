@@ -4,7 +4,7 @@ import { useColorsContext } from "../../contexts/colors-context";
 import "./color-saved.css";
 
 function ColorSaved() {
-  let { saved } = useColorsContext();
+  let saved = JSON.parse(localStorage.getItem("savedColors"));
   let { handlerClickClose } = useColorsContext();
 
   return (

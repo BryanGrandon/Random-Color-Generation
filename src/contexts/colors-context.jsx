@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 import { actionsSavedIcon } from "../components/buttons/saved-icon-button/saved-icon-button";
-import { randomColor, searchColor } from "./functions";
+import { randomColor, saveLocalStorage, searchColor } from "./functions";
 
 const ColorsContext = createContext();
 const useColorsContext = () => {
@@ -8,7 +8,9 @@ const useColorsContext = () => {
 };
 
 function ColorsContextProvider({ children }) {
-  const [saved, setSaved] = useState([]);
+  const [saved, setSaved] = useState(
+    JSON.parse(localStorage.getItem("savedColors"))
+  );
   const [hexadecimal, setHexadecimal] = useState("");
   const $ = (element) => document.querySelector(`.${element}`);
 
@@ -17,6 +19,7 @@ function ColorsContextProvider({ children }) {
     for (let i = 0; i < newSaved.length; i++) {
       newSaved[i].id = i;
     }
+    saveLocalStorage(newSaved);
     setSaved(newSaved);
   };
 
@@ -61,6 +64,7 @@ function ColorsContextProvider({ children }) {
       };
       setSaved([...saved, info]);
       actionsSavedIcon.marking();
+      saveLocalStorage([...saved, info]);
     } else if (searchColor(saved, hexadecimal)) {
       deleteColor(hexadecimal);
       actionsSavedIcon.unmarked();

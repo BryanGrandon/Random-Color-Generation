@@ -15,4 +15,8 @@ const searchColor = (objectArray, color) => {
   return theColors.includes(color);
 };
 
-export { randomColor, searchColor };
+const saveLocalStorage = (list) => {
+  localStorage.setItem("savedColors", JSON.stringify(list));
+};
+
+export { randomColor, searchColor, saveLocalStorage };
