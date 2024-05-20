@@ -1,7 +1,4 @@
 .select-color {
-  padding: 2rem 1rem;
-  max-width: 1200px;
-  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;

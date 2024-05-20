@@ -1,4 +1,25 @@
-.container__header {
+.main_header {
   background-image: url(https://images.pexels.com/photos/3209473/pexels-photo-3209473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   background-size: cover;
+}
+.container {
+  display: grid;
+  grid-template-areas: "content content content content content aside";
+  max-width: 1200px;
+  margin: auto;
+}
+.container__main {
+  grid-area: content;
+  padding: 1rem;
+}
+.container__aside {
+  grid-area: aside;
+  padding: 1rem;
+}
+@media screen and (max-width: 920px) {
+  .container {
+    grid-template-areas:
+      "content content content"
+      "aside aside aside";
+  }
 }

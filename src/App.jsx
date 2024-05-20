@@ -6,15 +6,16 @@ import SelectColor from "./view/select-color/select-color";
 function App() {
   return (
     <>
-      <main className="main">
-        <header className="container__header">
-          <Header />
-        </header>
-        <SelectColor />
-        <ColorSaved />
-        <article>
-          <h2>Gradients</h2>
+      <header className="main_header">
+        <Header />
+      </header>
+      <main className="container">
+        <article className="container__main">
+          <SelectColor />
         </article>
+        <aside className="container__aside">
+          <ColorSaved />
+        </aside>
       </main>
     </>
   );
