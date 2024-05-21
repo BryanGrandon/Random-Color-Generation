@@ -19,4 +19,12 @@ const saveLocalStorage = (list) => {
   localStorage.setItem("savedColors", JSON.stringify(list));
 };
 
-export { randomColor, searchColor, saveLocalStorage };
+const alertCopy = (color) => {
+  const $span = document.createElement("span");
+  $span.classList.add("alert");
+  $span.textContent = `Copy: ${color}`;
+  document.body.insertAdjacentElement("afterbegin", $span);
+  setTimeout(() => document.body.removeChild($span), 1000);
+};
+
+export { randomColor, searchColor, saveLocalStorage, alertCopy };

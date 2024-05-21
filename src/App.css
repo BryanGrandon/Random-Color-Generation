@@ -45,3 +45,16 @@
 .offline {
   background-color: #c94738;
 }
+
+/* Alert copy */
+
+.alert {
+  position: fixed;
+  left: 40vw;
+  top: 1rem;
+  font-family: cursive;
+  border-radius: 1rem;
+  background-color: #ff6e6c;
+  box-shadow: 1px 1px 3px #1f1235;
+  padding: 0.2rem 0.6rem;
+}

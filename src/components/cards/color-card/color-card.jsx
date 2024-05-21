@@ -1,11 +1,13 @@
 import React from "react";
 import "./color-card.css";
 import { IoCloseSharp } from "react-icons/io5";
+import { alertCopy } from "../../../contexts/functions";
 
 function ColorCard({ hexadecimal, onClick }) {
   const handlerClickCopyHex = (e) => {
     let color = e.target.innerText;
     navigator.clipboard.writeText([color]);
+    alertCopy(color);
   };
   return (
     <section

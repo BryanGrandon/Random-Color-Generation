@@ -3,6 +3,7 @@ import { useColorsContext } from "../../contexts/colors-context";
 import SavedIconButton from "../../components/buttons/saved-icon-button/saved-icon-button";
 import CopyIconButton from "../../components/buttons/copy-icon-button/copy-icon-button";
 import "./select-color.css";
+import { alertCopy } from "../../contexts/functions";
 
 function SelectColor() {
   let { hexadecimal } = useColorsContext();
@@ -35,7 +36,10 @@ function SelectColor() {
           />
           <section className="select-color__buttons">
             <CopyIconButton
-              onClick={() => navigator.clipboard.writeText([hexadecimal])}
+              onClick={() => {
+                navigator.clipboard.writeText([hexadecimal]);
+                alertCopy(hexadecimal);
+              }}
             />
             <SavedIconButton onClick={handlerClickSaveColor} />
             <button
