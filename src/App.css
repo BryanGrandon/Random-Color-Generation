@@ -23,3 +23,25 @@
       "aside aside aside";
   }
 }
+
+/* Network status */
+
+.status {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: cursive;
+  color: #fff;
+}
+.online {
+  background-color: #57af0e;
+}
+.offline {
+  background-color: #c94738;
+}
