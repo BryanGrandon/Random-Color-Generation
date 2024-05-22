@@ -10,13 +10,10 @@ function ColorCard({ hexadecimal, onClick }) {
     alertCopy(color);
   };
   return (
-    <section
-      onClick={handlerClickCopyHex}
-      style={{ backgroundColor: hexadecimal }}
-      className="color-card"
-      value={hexadecimal}
-    >
-      <p className="color-card__hex">{hexadecimal}</p>
+    <section style={{ backgroundColor: hexadecimal }} className="color-card">
+      <p onClick={handlerClickCopyHex} className="color-card__hex">
+        {hexadecimal}
+      </p>
       <button value={hexadecimal} onClick={onClick} className="color-card__btn">
         <IoCloseSharp className="svg__close" />
       </button>
