@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { randomColor } from "../../contexts/functions";
 import "./gradient.css";
 import MainButton from "../../components/buttons/main-button/main-button";
 
 function Gradient() {
   const $ = (element) => document.querySelector(`.${element}`);
-  const [color1, setColor1] = useState();
-  const [color2, setColor2] = useState();
+  const [colorOne, setColorOne] = useState();
+  const [colorTwo, setColorTwo] = useState();
   const [degrees, setDegrees] = useState();
 
   const generateGradient = (deg, color1, color2) => {
@@ -15,42 +15,39 @@ function Gradient() {
       `linear-gradient(${deg}deg, ${color1}, ${color2})`
     );
   };
-  const handlerChangeInputColor = (e) => {
-    let classList = e.target.classList.value;
-    if (classList.includes("color-1")) {
-      let color = e.target.value;
-      $("text-color-1").value = color;
-      setColor1(color);
-      generateGradient(degrees, color, color2);
-    } else if (classList.includes("color-2")) {
-      let color = e.target.value;
-      $("text-color-2").value = color;
-      setColor2(color);
-      generateGradient(degrees, color1, color2);
+  const handlerChangeColor1 = (e) => {
+    let color = e.target.value;
+    $("text-color-1").value = color;
+    setColorOne(color);
+    generateGradient(degrees, color, colorTwo);
+  };
+  const handlerChangeColorText1 = (e) => {
+    let color = e.target.value;
+    if (color.length == 7) {
+      $("color-1").value = color;
+      setColorOne(color);
+      generateGradient(degrees, color, colorTwo);
     }
   };
-  const handlerChangeInputText = (e) => {
-    let classList = e.target.classList.value;
-    if (classList.includes("text-color-1")) {
-      let color = e.target.value;
-      if (color.length == 7) {
-        $("color-1").value = color;
-        setColor1(color);
-        generateGradient(degrees, color, color2);
-      }
-    } else if (classList.includes("text-color-2")) {
-      let color = e.target.value;
-      if (color.length == 7) {
-        $("color-2").value = color;
-        setColor2(color);
-        generateGradient(degrees, color1, color);
-      }
+  const handlerChangeColor2 = (e) => {
+    let color = e.target.value;
+    $("text-color-2").value = color;
+    setColorTwo(color);
+    generateGradient(degrees, colorOne, color);
+  };
+  const handlerChangeColorText2 = (e) => {
+    let color = e.target.value;
+    if (color.length == 7) {
+      $("color-2").value = color;
+      setColorTwo(color);
+      generateGradient(degrees, colorOne, color);
     }
   };
-  const handlerChangeDeg = (e) => {
+
+  const handlerChangeDegrees = (e) => {
     let deg = e.target.value;
     setDegrees(deg);
-    generateGradient(deg, color1, color2);
+    generateGradient(deg, colorOne, colorTwo);
   };
 
   const handlerClickRandomGradient = () => {
@@ -62,11 +59,15 @@ function Gradient() {
     $("text-color-1").value = color1;
     $("text-color-2").value = color2;
     $("degrees").value = deg;
-    setColor1(color1);
-    setColor2(color2);
+    setColorOne(color1);
+    setColorTwo(color2);
     setDegrees(deg);
     generateGradient(deg, color1, color2);
   };
+
+  useEffect(() => {
+    handlerClickRandomGradient();
+  }, []);
 
   return (
     <article className="gradient">
@@ -76,24 +77,24 @@ function Gradient() {
           <section className="gradient__color">
             <input
               type="color"
-              onChange={handlerChangeInputColor}
+              onChange={handlerChangeColor1}
               className="gradient__input-color color-1"
             />
             <input
               type="text"
-              onChange={handlerChangeInputText}
+              onChange={handlerChangeColorText1}
               className="gradient__input-text text-color-1"
             />
           </section>
           <section className="gradient__color">
             <input
               type="color"
-              onChange={handlerChangeInputColor}
+              onChange={handlerChangeColor2}
               className="gradient__input-color color-2"
             />
             <input
               type="text"
-              onChange={handlerChangeInputText}
+              onChange={handlerChangeColorText2}
               className="gradient__input-text text-color-2"
             />
           </section>
@@ -101,7 +102,7 @@ function Gradient() {
             Degrees:
             <input
               type="number"
-              onChange={handlerChangeDeg}
+              onChange={handlerChangeDegrees}
               className="gradient__input-number degrees"
             />
           </label>
