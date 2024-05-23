@@ -3,10 +3,6 @@
   flex-direction: column;
   gap: 2rem;
 }
-.gradient__h2 {
-  font-size: 1.8rem;
-  font-family: cursive;
-}
 .gradient__gradient {
   height: 12rem;
   display: flex;

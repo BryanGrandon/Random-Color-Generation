@@ -3,10 +3,6 @@
   flex-direction: column;
   gap: 2rem;
 }
-.select-color__h2 {
-  font-size: 1.8rem;
-  font-family: cursive;
-}
 .select-color__color {
   height: 12rem;
   display: flex;

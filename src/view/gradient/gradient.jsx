@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { randomColor } from "../../contexts/functions";
 import "./gradient.css";
 import MainButton from "../../components/buttons/main-button/main-button";
+import TitleH2 from "../../components/title-h2/title-h2";
 
 function Gradient() {
   const $ = (element) => document.querySelector(`.${element}`);
@@ -43,13 +44,11 @@ function Gradient() {
       generateGradient(degrees, colorOne, color);
     }
   };
-
   const handlerChangeDegrees = (e) => {
     let deg = e.target.value;
     setDegrees(deg);
     generateGradient(deg, colorOne, colorTwo);
   };
-
   const handlerClickRandomGradient = () => {
     let deg = Math.floor(Math.random() * 360);
     let color1 = randomColor();
@@ -64,14 +63,13 @@ function Gradient() {
     setDegrees(deg);
     generateGradient(deg, color1, color2);
   };
-
   useEffect(() => {
     handlerClickRandomGradient();
   }, []);
 
   return (
     <article className="gradient">
-      <h2 className="gradient__h2">Gradient</h2>
+      <TitleH2 text="Gradient" />
       <article className="gradient__gradient">
         <section className="gradient__options">
           <section className="gradient__color">

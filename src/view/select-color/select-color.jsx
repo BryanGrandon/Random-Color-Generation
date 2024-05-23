@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import { useColorsContext } from "../../contexts/colors-context";
 import SavedIconButton from "../../components/buttons/saved-icon-button/saved-icon-button";
 import CopyIconButton from "../../components/buttons/copy-icon-button/copy-icon-button";
-import "./select-color.css";
-import { alertCopy } from "../../contexts/functions";
 import MainButton from "../../components/buttons/main-button/main-button";
+import TitleH2 from "../../components/title-h2/title-h2";
+import { alertCopy } from "../../contexts/functions";
+import "./select-color.css";
 
 function SelectColor() {
   let { hexadecimal } = useColorsContext();
@@ -21,8 +22,7 @@ function SelectColor() {
 
   return (
     <article className="select-color">
-      <h2 className="select-color__h2">Select Color</h2>
-
+      <TitleH2 text="Select color" />
       <section className="select-color__color">
         <section className="select-color__options">
           <input
