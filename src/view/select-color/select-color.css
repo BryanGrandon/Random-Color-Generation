@@ -51,17 +51,3 @@
   display: flex;
   gap: 0.8rem;
 }
-.select-color__btn {
-  cursor: pointer;
-  font-family: cursive;
-  border-radius: 0.5rem;
-  padding: 0.2rem 0.6rem;
-  background-color: #67568c;
-  box-shadow: 1px 1px 5px #1f1234;
-}
-.select-color__btn:hover {
-  color: #ff6e6c;
-}
-.select-color__btn:active {
-  box-shadow: 1px 1px 5px #1f1234 inset;
-}

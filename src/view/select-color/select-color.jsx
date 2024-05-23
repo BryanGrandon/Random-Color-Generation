@@ -4,6 +4,7 @@ import SavedIconButton from "../../components/buttons/saved-icon-button/saved-ic
 import CopyIconButton from "../../components/buttons/copy-icon-button/copy-icon-button";
 import "./select-color.css";
 import { alertCopy } from "../../contexts/functions";
+import MainButton from "../../components/buttons/main-button/main-button";
 
 function SelectColor() {
   let { hexadecimal } = useColorsContext();
@@ -42,12 +43,8 @@ function SelectColor() {
               }}
             />
             <SavedIconButton onClick={handlerClickSaveColor} />
-            <button
-              className="select-color__btn"
-              onClick={handlerClickRandomColor}
-            >
-              Random
-            </button>
+
+            <MainButton text="Random" onclick={handlerClickRandomColor} />
           </section>
         </section>
       </section>

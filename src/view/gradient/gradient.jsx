@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./gradient.css";
 import { randomColor } from "../../contexts/functions";
+import "./gradient.css";
+import MainButton from "../../components/buttons/main-button/main-button";
 
 function Gradient() {
   const $ = (element) => document.querySelector(`.${element}`);
@@ -104,12 +105,7 @@ function Gradient() {
               className="gradient__input-number degrees"
             />
           </label>
-          <button
-            className="gradient__button"
-            onClick={handlerClickRandomGradient}
-          >
-            Random
-          </button>
+          <MainButton text="Random" onclick={handlerClickRandomGradient} />
         </section>
       </article>
     </article>

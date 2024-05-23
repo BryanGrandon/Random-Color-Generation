@@ -57,17 +57,3 @@
 .gradient__input-number:focus {
   outline: none;
 }
-.gradient__button {
-  cursor: pointer;
-  font-family: cursive;
-  border-radius: 0.5rem;
-  padding: 0.2rem 0.6rem;
-  background-color: #67568c;
-  box-shadow: 1px 1px 5px #1f1234;
-}
-.gradient__button:hover {
-  color: #ff6e6c;
-}
-.gradient__button:active {
-  box-shadow: 1px 1px 5px #1f1234 inset;
-}
