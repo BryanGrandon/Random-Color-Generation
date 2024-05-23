@@ -6,18 +6,15 @@
 .gradient__gradient {
   height: 12rem;
   display: flex;
-  align-items: flex-start;
+  align-items: end;
   border-radius: 1rem;
   overflow: hidden;
 }
 .gradient__options {
   background-color: #00000075;
-  height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
   padding: 0.5rem;
-  width: 9rem;
 }
 .gradient__color {
   display: flex;
@@ -35,6 +32,7 @@
 }
 .gradient__input-degrees {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
   font-family: cursive;
 }
@@ -43,4 +41,11 @@
 }
 .gradient__input-number:focus {
   outline: none;
+}
+@media screen and (max-width: 570px) {
+  .gradient__options {
+    height: 100%;
+    flex-direction: column;
+    width: 9rem;
+  }
 }

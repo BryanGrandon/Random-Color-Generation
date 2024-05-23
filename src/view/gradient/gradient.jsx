@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { randomColor } from "../../contexts/functions";
-import "./gradient.css";
 import MainButton from "../../components/buttons/main-button/main-button";
 import TitleH2 from "../../components/title-h2/title-h2";
 import InputColor from "../../components/forms/input-color/input-color";
+import "./gradient.css";
 
 function Gradient() {
   const $ = (element) => document.querySelector(`.${element}`);
