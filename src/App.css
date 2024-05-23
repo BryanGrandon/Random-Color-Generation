@@ -10,7 +10,10 @@
 }
 .container__main {
   grid-area: content;
-  padding: 1rem;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 .container__aside {
   grid-area: aside;

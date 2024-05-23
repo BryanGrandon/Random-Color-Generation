@@ -3,6 +3,7 @@ import Header from "./components/header/header";
 import ColorSaved from "./view/color-saved/color-saved";
 import SelectColor from "./view/select-color/select-color";
 import { isOnline } from "./app-function";
+import Gradient from "./view/gradient/gradient";
 
 function App() {
   window.addEventListener("online", () => isOnline());
@@ -15,6 +16,7 @@ function App() {
       <main className="container">
         <article className="container__main">
           <SelectColor />
+          <Gradient />
         </article>
         <aside className="container__aside">
           <ColorSaved />

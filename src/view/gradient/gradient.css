@@ -1,0 +1,73 @@
+.gradient {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.gradient__h2 {
+  font-size: 1.8rem;
+  font-family: cursive;
+}
+.gradient__gradient {
+  height: 12rem;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.gradient__options {
+  background-color: #00000075;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0.5rem;
+  width: 9rem;
+}
+.gradient__color {
+  display: flex;
+  gap: 0.5rem;
+}
+.gradient__input-text {
+  color: #fff;
+  text-shadow: 2px 2px 5px #1f1234;
+  font-weight: bold;
+  font-family: cursive;
+  width: calc(100% - 3rem);
+}
+.gradient__input-text:focus {
+  outline: none;
+}
+.gradient__input-color {
+  height: 2rem;
+  width: 1.8rem;
+}
+.gradient__input-color::-webkit-color-swatch {
+  box-shadow: 1px 1px 3px #1f1234;
+  border-radius: 50%;
+  border: none;
+}
+.gradient__input-degrees {
+  display: flex;
+  gap: 0.5rem;
+  font-family: cursive;
+}
+.gradient__input-number {
+  width: 100%;
+}
+.gradient__input-number:focus {
+  outline: none;
+}
+.gradient__button {
+  cursor: pointer;
+  font-family: cursive;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  background-color: #67568c;
+  box-shadow: 1px 1px 5px #1f1234;
+}
+.gradient__button:hover {
+  color: #ff6e6c;
+}
+.gradient__button:active {
+  box-shadow: 1px 1px 5px #1f1234 inset;
+}
