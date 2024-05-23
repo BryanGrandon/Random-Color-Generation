@@ -6,6 +6,7 @@ import MainButton from "../../components/buttons/main-button/main-button";
 import TitleH2 from "../../components/title-h2/title-h2";
 import { alertCopy } from "../../contexts/functions";
 import "./select-color.css";
+import InputColor from "../../components/forms/input-color/input-color";
 
 function SelectColor() {
   let { hexadecimal } = useColorsContext();
@@ -19,16 +20,14 @@ function SelectColor() {
   useEffect(() => {
     handlerClickRandomColor();
   }, []);
-
   return (
     <article className="select-color">
       <TitleH2 text="Select color" />
       <section className="select-color__color">
         <section className="select-color__options">
-          <input
-            type="color"
-            className="select-color__input-color"
+          <InputColor
             onChange={handlerChangeInputColor}
+            className={"select-color__input-color"}
           />
           <input
             type="text"

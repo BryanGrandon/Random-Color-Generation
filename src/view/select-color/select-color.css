@@ -33,13 +33,6 @@
 .select-color__input-color {
   position: absolute;
   left: 0.8rem;
-  height: 2rem;
-  width: 1.8rem;
-}
-.select-color__input-color::-webkit-color-swatch {
-  box-shadow: 1px 1px 3px #1f1234;
-  border-radius: 50%;
-  border: none;
 }
 .select-color__buttons {
   position: absolute;

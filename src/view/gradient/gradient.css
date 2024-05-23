@@ -33,15 +33,6 @@
 .gradient__input-text:focus {
   outline: none;
 }
-.gradient__input-color {
-  height: 2rem;
-  width: 1.8rem;
-}
-.gradient__input-color::-webkit-color-swatch {
-  box-shadow: 1px 1px 3px #1f1234;
-  border-radius: 50%;
-  border: none;
-}
 .gradient__input-degrees {
   display: flex;
   gap: 0.5rem;

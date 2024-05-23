@@ -3,6 +3,7 @@ import { randomColor } from "../../contexts/functions";
 import "./gradient.css";
 import MainButton from "../../components/buttons/main-button/main-button";
 import TitleH2 from "../../components/title-h2/title-h2";
+import InputColor from "../../components/forms/input-color/input-color";
 
 function Gradient() {
   const $ = (element) => document.querySelector(`.${element}`);
@@ -66,18 +67,13 @@ function Gradient() {
   useEffect(() => {
     handlerClickRandomGradient();
   }, []);
-
   return (
     <article className="gradient">
       <TitleH2 text="Gradient" />
       <article className="gradient__gradient">
         <section className="gradient__options">
           <section className="gradient__color">
-            <input
-              type="color"
-              onChange={handlerChangeColor1}
-              className="gradient__input-color color-1"
-            />
+            <InputColor onChange={handlerChangeColor1} className="color-1" />
             <input
               type="text"
               onChange={handlerChangeColorText1}
@@ -85,11 +81,7 @@ function Gradient() {
             />
           </section>
           <section className="gradient__color">
-            <input
-              type="color"
-              onChange={handlerChangeColor2}
-              className="gradient__input-color color-2"
-            />
+            <InputColor onChange={handlerChangeColor2} className="color-2" />
             <input
               type="text"
               onChange={handlerChangeColorText2}
