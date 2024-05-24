@@ -22,10 +22,9 @@ function Header() {
         </nav>
         <section className="header__title">
           <h1 className="header__h1">Colors Generator</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis
-            recusandae eius incidunt aut rerum cumque dicta. Quibusdam facilis
-            quidem
+          <p className="header__text">
+            This site is intended to allow you to generate both a random color
+            and a random gradient.
           </p>
         </section>
       </article>
