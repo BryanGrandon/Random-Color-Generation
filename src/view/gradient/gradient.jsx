@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { randomColor } from "../../contexts/functions";
+import { alertCopy, randomColor } from "../../contexts/functions";
 import MainButton from "../../components/buttons/main-button/main-button";
 import TitleH2 from "../../components/title-h2/title-h2";
 import InputColor from "../../components/forms/input-color/input-color";
@@ -64,13 +64,18 @@ function Gradient() {
     setDegrees(deg);
     generateGradient(deg, color1, color2);
   };
+  const copyGradient = () => {
+    let text = `background: linear-gradient(${degrees}deg, ${colorOne}, ${colorTwo});`;
+    navigator.clipboard.writeText([text]);
+    alertCopy("Gradient");
+  };
   useEffect(() => {
     handlerClickRandomGradient();
   }, []);
   return (
     <article className="gradient">
       <TitleH2 text="Gradient" />
-      <article className="gradient__gradient">
+      <article className="gradient__gradient" onClick={copyGradient}>
         <section className="gradient__options">
           <section className="gradient__color">
             <InputColor onChange={handlerChangeColor1} className="color-1" />
@@ -102,5 +107,4 @@ function Gradient() {
     </article>
   );
 }
-
 export default Gradient;
