@@ -4,6 +4,7 @@ import MainButton from "../../components/buttons/main-button/main-button";
 import TitleH2 from "../../components/title-h2/title-h2";
 import InputColor from "../../components/forms/input-color/input-color";
 import "./gradient.css";
+import CopyIconButton from "../../components/buttons/copy-icon-button/copy-icon-button";
 
 function Gradient() {
   const $ = (element) => document.querySelector(`.${element}`);
@@ -72,10 +73,11 @@ function Gradient() {
   useEffect(() => {
     handlerClickRandomGradient();
   }, []);
+
   return (
     <article className="gradient">
       <TitleH2 text="Gradient" />
-      <article className="gradient__gradient" onClick={copyGradient}>
+      <article className="gradient__gradient">
         <section className="gradient__options">
           <section className="gradient__color">
             <InputColor onChange={handlerChangeColor1} className="color-1" />
@@ -101,6 +103,10 @@ function Gradient() {
               className="gradient__input-number degrees"
             />
           </label>
+          <CopyIconButton
+            onClick={copyGradient}
+            className="gradient__copy-icon"
+          />
           <MainButton text="Random" onclick={handlerClickRandomGradient} />
         </section>
       </article>
