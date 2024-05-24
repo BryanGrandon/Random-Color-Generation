@@ -4,7 +4,7 @@
 }
 .container {
   display: grid;
-  grid-template-areas: "content content content content content aside";
+  grid-template-areas: "content content aside";
   max-width: 1200px;
   margin: auto;
 }

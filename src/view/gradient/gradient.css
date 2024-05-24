@@ -12,6 +12,7 @@
 }
 .gradient__options {
   background-color: #00000075;
+  color: #fff;
   display: flex;
   justify-content: space-evenly;
   padding: 0.5rem;
