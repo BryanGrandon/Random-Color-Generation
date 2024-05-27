@@ -10,7 +10,6 @@
   cursor: pointer;
   text-shadow: 2px 2px 6px #1f1235;
   font-size: 1rem;
-  font-family: cursive;
 }
 .color-card__btn {
   filter: drop-shadow(2px 2px 6px #1f1235);
