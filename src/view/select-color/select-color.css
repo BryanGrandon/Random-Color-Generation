@@ -25,7 +25,6 @@
   height: 100%;
   text-shadow: 2px 2px 5px #1f1234;
   font-weight: bold;
-  font-family: cursive;
 }
 .select-color__input-text:focus {
   outline: none;

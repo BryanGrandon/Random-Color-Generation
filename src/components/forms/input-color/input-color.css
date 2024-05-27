@@ -1,6 +1,6 @@
 .input__color {
   height: 2rem;
-  width: 1.8rem;
+  width: 2rem;
 }
 .input__color::-webkit-color-swatch {
   box-shadow: 1px 1px 3px #1f1234;
