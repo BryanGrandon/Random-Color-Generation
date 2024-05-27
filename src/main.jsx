@@ -5,9 +5,9 @@ import "./styles/reset-css-styles.css";
 import { ColorsContextProvider } from "./contexts/colors-context.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ColorsContextProvider>
-    <React.StrictMode>
+  <React.StrictMode>
+    <ColorsContextProvider>
       <App />
-    </React.StrictMode>
-  </ColorsContextProvider>
+    </ColorsContextProvider>
+  </React.StrictMode>
 );

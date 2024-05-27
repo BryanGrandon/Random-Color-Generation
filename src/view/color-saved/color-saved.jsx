@@ -1,11 +1,11 @@
 import React from "react";
-import ColorCard from "../../components/cards/color-card/color-card";
 import { useColorsContext } from "../../contexts/colors-context";
-import "./color-saved.css";
+import ColorCard from "../../components/cards/color-card/color-card";
 import TitleH2 from "../../components/title-h2/title-h2";
+import "./color-saved.css";
 
 function ColorSaved() {
-  let saved = JSON.parse(localStorage.getItem("savedColors"));
+  let { saved } = useColorsContext();
   let { handlerClickClose } = useColorsContext();
 
   return (

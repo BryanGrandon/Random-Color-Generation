@@ -6,23 +6,17 @@ const ColorsContext = createContext();
 const useColorsContext = () => {
   return useContext(ColorsContext);
 };
-
 function ColorsContextProvider({ children }) {
-  const [saved, setSaved] = useState(
-    JSON.parse(localStorage.getItem("savedColors"))
-  );
+  const [saved, setSaved] = useState([]);
   const [hexadecimal, setHexadecimal] = useState("");
   const $ = (element) => document.querySelector(`.${element}`);
-
   const deleteColor = (color) => {
     const newSaved = saved.filter((e) => e.hex !== color);
     for (let i = 0; i < newSaved.length; i++) {
       newSaved[i].id = i;
     }
-    saveLocalStorage(newSaved);
     setSaved(newSaved);
   };
-
   const handlerClickRandomColor = () => {
     let color = randomColor();
     searchColor(saved, color)
@@ -33,7 +27,6 @@ function ColorsContextProvider({ children }) {
     $("select-color__color").style.setProperty("background-color", color);
     setHexadecimal(color);
   };
-
   const handlerChangeInputColor = (e) => {
     let color = e.target.value;
     searchColor(saved, color)
@@ -43,7 +36,6 @@ function ColorsContextProvider({ children }) {
     $("select-color__color").style.setProperty("background-color", color);
     setHexadecimal(color);
   };
-
   const handlerChangeInputText = (e) => {
     let color = e.target.value;
     searchColor(saved, color)

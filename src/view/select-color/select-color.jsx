@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useColorsContext } from "../../contexts/colors-context";
+import { alertCopy } from "../../contexts/functions";
 import SavedIconButton from "../../components/buttons/saved-icon-button/saved-icon-button";
 import CopyIconButton from "../../components/buttons/copy-icon-button/copy-icon-button";
 import MainButton from "../../components/buttons/main-button/main-button";
 import TitleH2 from "../../components/title-h2/title-h2";
-import { alertCopy } from "../../contexts/functions";
-import "./select-color.css";
 import InputColor from "../../components/forms/input-color/input-color";
+import "./select-color.css";
 
 function SelectColor() {
   let { hexadecimal } = useColorsContext();
@@ -20,6 +20,7 @@ function SelectColor() {
   useEffect(() => {
     handlerClickRandomColor();
   }, []);
+
   return (
     <article className="select-color">
       <TitleH2 text="Select color" />
