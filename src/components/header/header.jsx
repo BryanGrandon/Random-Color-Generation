@@ -8,8 +8,8 @@ function Header() {
     <article className="header">
       <article className="header__content">
         <nav className="header__nav">
-          <a href="/" className="header__logo">
-            Logo
+          <a href="https://github.com/BryanGrandon" className="header__logo">
+            BG.Code
           </a>
           <a
             href="https://github.com/BryanGrandon/Random-Color-Generation"
