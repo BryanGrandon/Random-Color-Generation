@@ -76,11 +76,7 @@ function Gradient() {
 
   return (
     <article className="gradient">
-      <TitleH2 text="Gradient" />
-      <p>
-        The gradient section allows us to generate a random gradient where you
-        can modify and copy the gradient.
-      </p>
+      <TitleH2 text="Random gradient" />
       <article className="gradient__gradient">
         <section className="gradient__options">
           <section className="gradient__color">

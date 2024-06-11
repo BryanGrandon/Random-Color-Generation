@@ -16,6 +16,7 @@
   display: flex;
   justify-content: space-evenly;
   padding: 0.5rem;
+  width: 100%;
 }
 .gradient__color {
   display: flex;

@@ -23,11 +23,7 @@ function SelectColor() {
 
   return (
     <article className="select-color">
-      <TitleH2 text="Select color" />
-      <p>
-        The color selection section allows you to generate random colors where
-        you can modify, save and copy the hexadecimal color
-      </p>
+      <TitleH2 text="Random color" />
       <section className="select-color__color">
         <section className="select-color__options">
           <InputColor

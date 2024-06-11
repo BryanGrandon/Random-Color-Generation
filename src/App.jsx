@@ -16,11 +16,9 @@ function App() {
       <main className="container">
         <article className="container__main">
           <SelectColor />
+          <ColorSaved />
           <Gradient />
         </article>
-        <aside className="container__aside">
-          <ColorSaved />
-        </aside>
       </main>
     </>
   );
